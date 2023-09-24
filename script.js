@@ -45,9 +45,9 @@ document.querySelector(".check").addEventListener("click", function () {
   let guess = Number(guessEl.value);
 
   if (!guess) {
-    displayMessage("⛔ No Number...");
+    displayMessage("No Number...");
   } else if (guess === secretNumber) {
-    displayMessage("✔ Correct Number!");
+    displayMessage("Correct Number!");
     displaySecretNumber(secretNumber);
     correctSecretNumberBoxStyle();
 
@@ -57,15 +57,13 @@ document.querySelector(".check").addEventListener("click", function () {
     }
   } else if (guess !== secretNumber) {
     if (score > 1) {
-      displayMessage(
-        guess > secretNumber ? "📈 Number too high" : "📉 Number too low"
-      );
+      displayMessage(guess > secretNumber ? "Number too high" : "Number too low");
       score--;
       displayScore(score);
     } else {
       wrongSecretNumberBoxStyle();
       displaySecretNumber(secretNumber);
-      displayMessage("💥 Game over...");
+      displayMessage("Game over...");
       displayScore(0);
     }
   }
